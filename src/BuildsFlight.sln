@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildsFlight", "BuildsFlight\BuildsFlight.csproj", "{A1E757A0-78A0-4A5B-A767-EC7069AC0891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{B5AEEB8D-A9A2-4A2B-9500-88EDA4477001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bf_cli_add_build", "bf_cli_add_build\bf_cli_add_build.csproj", "{58BD7D02-BC9A-4700-BF05-5BC6982F87DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bf_cli_base", "bf_cli_base\bf_cli_base.csproj", "{B98EF94A-A2C2-4D4F-8EA6-2DB849705FFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1E757A0-78A0-4A5B-A767-EC7069AC0891}.Debug|x86.ActiveCfg = Debug|x86
+		{A1E757A0-78A0-4A5B-A767-EC7069AC0891}.Debug|x86.Build.0 = Debug|x86
+		{A1E757A0-78A0-4A5B-A767-EC7069AC0891}.Release|x86.ActiveCfg = Release|x86
+		{A1E757A0-78A0-4A5B-A767-EC7069AC0891}.Release|x86.Build.0 = Release|x86
+		{B5AEEB8D-A9A2-4A2B-9500-88EDA4477001}.Debug|x86.ActiveCfg = Debug|x86
+		{B5AEEB8D-A9A2-4A2B-9500-88EDA4477001}.Debug|x86.Build.0 = Debug|x86
+		{B5AEEB8D-A9A2-4A2B-9500-88EDA4477001}.Release|x86.ActiveCfg = Release|x86
+		{B5AEEB8D-A9A2-4A2B-9500-88EDA4477001}.Release|x86.Build.0 = Release|x86
+		{58BD7D02-BC9A-4700-BF05-5BC6982F87DB}.Debug|x86.ActiveCfg = Debug|x86
+		{58BD7D02-BC9A-4700-BF05-5BC6982F87DB}.Debug|x86.Build.0 = Debug|x86
+		{58BD7D02-BC9A-4700-BF05-5BC6982F87DB}.Release|x86.ActiveCfg = Release|x86
+		{58BD7D02-BC9A-4700-BF05-5BC6982F87DB}.Release|x86.Build.0 = Release|x86
+		{B98EF94A-A2C2-4D4F-8EA6-2DB849705FFD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B98EF94A-A2C2-4D4F-8EA6-2DB849705FFD}.Debug|x86.Build.0 = Debug|Any CPU
+		{B98EF94A-A2C2-4D4F-8EA6-2DB849705FFD}.Release|x86.ActiveCfg = Release|Any CPU
+		{B98EF94A-A2C2-4D4F-8EA6-2DB849705FFD}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
