@@ -7,10 +7,12 @@ public class CliBase
 {
 	public static void Init()
 	{
-		var appKey = Environment.GetEnvironmentVariable("BF_ACCESS_KEY");
-		var appSecret = Environment.GetEnvironmentVariable("BF_ACCESS_SECRET");
-		var region = Environment.GetEnvironmentVariable("BF_REGION") ?? "ap-northeast-2";
-		var bucketName = Environment.GetEnvironmentVariable("BF_BUCKET");
+        var target = EnvironmentVariableTarget.User | EnvironmentVariableTarget.Process;
+
+		var appKey = Environment.GetEnvironmentVariable("BF_ACCESS_KEY", target);
+		var appSecret = Environment.GetEnvironmentVariable("BF_ACCESS_SECRET", target);
+		var region = Environment.GetEnvironmentVariable("BF_REGION", target) ?? "ap-northeast-2";
+		var bucketName = Environment.GetEnvironmentVariable("BF_BUCKET", target);
 
 		if (string.IsNullOrEmpty(appKey) || string.IsNullOrEmpty(appSecret))
 		{
