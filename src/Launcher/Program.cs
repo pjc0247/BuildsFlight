@@ -28,10 +28,8 @@ namespace Launcher
 		{
             Console.WriteLine("args : " + string.Join(", ", args));
 
-			BuildsFlight.Init(
-				"AKIAJNLHNGLVGVZ32ZXA", "lC29YKN28u/f4IPeU3CCb+3m6X/D9bcv6r0BKFTS", "ap-northeast-2",
-				"s3aad");
-			
+            BuildsFlight.Init("https://s3.ap-northeast-2.amazonaws.com/s3aad/buildsflight_index.json");
+
 			if (File.Exists("buildsflight.app") == false)
                 ErrorClose("`buildsflight.app` file not found");
 
@@ -69,7 +67,7 @@ namespace Launcher
             }
 
             //app.AddBuild("1.0.2", "https://s3.ap-northeast-2.amazonaws.com/s3aad/simple.zip", "");
-            app.SetTargetVersion("1.0.2");
+            //app.SetTargetVersion("1.0.2");
 
 			Console.WriteLine("TargetVersion : " + targetVersion);
 
