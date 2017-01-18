@@ -6,8 +6,8 @@ __BuildsFlight__ is a serverless build distribution/testing system based on a `A
 guides
 ----
 * __[SetUp your AWS.S3](setup.md)__
-
-* __[C# API](api.md)__ : to make your custom applications(launcher, cli-tools, etc...).
+* __[How to publish a new build](upload_build.md)__
+* __[C# API](api.md)__ : to make your custom applications (launcher, cli-tools, etc...).
 
 see also
 ----
