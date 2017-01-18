@@ -1,5 +1,5 @@
 
-You may add a policy on your bucket for [public access to your indexfile](https://github.com/pjc0247/BuildsFlight/blob/master/doc/api.md).
+You may add a policy on your bucket for [public access to indexfile](https://github.com/pjc0247/BuildsFlight/blob/master/doc/api.md).
 ```json
 {
   "Version":"2012-10-17",
