@@ -31,6 +31,7 @@ BuildsFlight.Init("https://s3.ap-northeast-2.amazonaws.com/s3aad/buildsflight_in
 var app = BuildsFlight.CreateApp("test");
 ```
 
+
 앱 정보 가져오기
 ----
 ```cs
@@ -38,6 +39,20 @@ var app = BuildsFlight.CreateApp("test");
 var app = BuildsFlight.GetApp("test");
 if (app == null)
     ; // 앱 찾을 수 없음
+```
+```cs
+Console.WriteLine($"[{app.Name}]");
+Console.WriteLine($"  created_at : {app.CreatedAt}");
+Console.WriteLine($"  target_ver : {app.TargetVersion}");
+Console.WriteLine($"  num_builds : {app.Builds.Count}");
+
+foreach( var build in app.Builds)
+{
+    Console.WriteLine($"      - {build.Version}");
+    Console.WriteLine($"          url : {build.Url}");
+    Console.WriteLine($"          created_at : {build.CreatedAt}");
+    Console.WriteLine($"          build_note : {build.Note}");
+}
 ```
 
 
