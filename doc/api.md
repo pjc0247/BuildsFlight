@@ -56,10 +56,34 @@ foreach( var build in app.Builds)
 ```
 
 
-빌드 추가하기
+Add a new build
 ----
 ```cs
 app.AddBuild("1.0.0", "download-url", "release-note");
+```
+`download-url`은 패키지 파일이 업로드된 다운로드 주소를 입력합니다. 다운로드 주소는 `NAS` 또는 `S3` 등이 될 수 있습니다.<br>
+<br>
+__BuildsFlight__는 패키지 파일 자체를 업로드해서 URL를 생성하는 API를 제공하지 않습니다.<br>
+따라서 `download-url`을 생성하는 코드는 직접 작성해야 하며, 아래는 `AWSSDK.S3`를 이용해 S3에 파일을 업로드하고 URL을 가져오는 코드입니다.
+```cs
+var s3 = new AmazonS3Client(AccessKey, AccessSecret, RegionName);
+var s3Key = $"buildsflight/{appName}/{version}/package.zip";
+
+var resp = s3.PutObject(new PutObjectRequest()
+{
+    FilePath = filepath,
+    Key = s3Key,
+    CannedACL = S3CannedACL.PublicRead,
+    BucketName = BucketName
+});
+if (resp.HttpStatusCode != System.Net.HttpStatusCode.OK)
+{
+    Console.WriteLine("Failed to upload file.");
+    return -1;
+}
+
+var s3FilePath =
+    $"https://s3.{RegionName}.amazonaws.com/{BucketName}/{s3Key}";
 ```
 
 만약 업로드한 빌드를, 테스트 타겟 버전으로 설정하고 싶다면 아래와같이 설정합니다.
