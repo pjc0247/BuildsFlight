@@ -28,15 +28,20 @@ namespace Launcher
 		{
             Console.WriteLine("args : " + string.Join(", ", args));
 
-            BuildsFlight.Init("https://s3.ap-northeast-2.amazonaws.com/s3aad/buildsflight_index.json");
-
 			if (File.Exists("buildsflight.app") == false)
                 ErrorClose("`buildsflight.app` file not found");
 
 			if (Directory.Exists("builds") == false)
 				Directory.CreateDirectory("builds");
 
-			var appId = File.ReadAllText("buildsflight.app");
+			var appFile = File.ReadAllText("buildsflight.app");
+			var appFileLines = appFile.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+			if (appFileLines.Length != 2)
+				ErrorClose("malformed .app file");
+
+			BuildsFlight.Init(appFileLines[1]);
+			var appId = appFileLines[0];
 			var app = BuildsFlight.GetApp(appId);
             if (app == null)
                 ErrorClose("app not found : " + appId);
@@ -65,9 +70,6 @@ namespace Launcher
                     catch (Exception) { }
                 }
             }
-
-            //app.AddBuild("1.0.2", "https://s3.ap-northeast-2.amazonaws.com/s3aad/simple.zip", "");
-            //app.SetTargetVersion("1.0.2");
 
 			Console.WriteLine("TargetVersion : " + targetVersion);
 
