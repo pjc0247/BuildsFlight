@@ -1,4 +1,9 @@
+Create a bucket
+----
+Please refer the [offocial S3 guide](https://aws.amazon.com/ko/documentation/s3/).
 
+Add a bucket policy
+----
 You may add a policy on your bucket for [public access to indexfile](https://github.com/pjc0247/BuildsFlight/blob/master/doc/api.md).
 ```json
 {
