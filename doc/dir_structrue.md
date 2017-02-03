@@ -14,7 +14,7 @@ CatVsMouse
        * run.bat
 ```
 
-* __launcer.exe__ : 누르면 게임이 시작됩니다.
+* __launcher.exe__ : 누르면 게임이 시작됩니다.
 * __buildsflight.app__ : 앱 정보
 * __builds__ : 각각의 게임 빌드 폴더
 
