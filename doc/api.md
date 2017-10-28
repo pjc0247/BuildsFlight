@@ -15,7 +15,7 @@ BuildsFlight.Init(
     "BUCKET_NAME");
 ```
 
-You can also initialize without __ACCESS TOKEN_. In this case, __BuildsFlight__ works in __ReadOnly__ mode.<br>
+You can also initialize without __ACCESS TOKEN__. In this case, __BuildsFlight__ works in __ReadOnly__ mode.<br>
 If your app is publicly distributed and cannnot contains your token, please use it.
 
 ```cs
