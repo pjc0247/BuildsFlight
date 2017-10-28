@@ -15,10 +15,11 @@ BuildsFlight.Init(
     "BUCKET_NAME");
 ```
 
-만약 배포할 앱에 인증 정보를 포함하기가 부담스러운 경우, __읽기 전용__으로 초기화하는 방법이 있습니다.<br>
-이는 단순히 `BuildsFlight`의 인덱스파일의 경로만을 가지고 초기화를 수행합니다. 이 경우 __읽기__ API만 사용이 가능합니다.
+You can also initialize without __ACCESS TOKEN_. In this case, __BuildsFlight__ works in __ReadOnly__ mode.<br>
+If your app is publicly distributed and cannnot contains your token, please use it.
 
 ```cs
+// initialize with indexfile's URL.
 BuildsFlight.Init("https://s3.ap-northeast-2.amazonaws.com/s3aad/buildsflight_index.json");
 ```
 
@@ -85,7 +86,7 @@ var s3FilePath =
     $"https://s3.{RegionName}.amazonaws.com/{BucketName}/{s3Key}";
 ```
 
-만약 업로드한 빌드를, 테스트 타겟 버전으로 설정하고 싶다면 아래와같이 설정합니다.
+If you want to set build as a target version, write code below.
 ```cs
 app.SetTargetVersion("1.0.0");
 ```
